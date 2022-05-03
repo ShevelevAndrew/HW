@@ -8,7 +8,7 @@ function Select() {
   };
 
   return (
-    <>
+    <div>
       <select className="combobox" onChange={handleChange} value={value}>
         <option value="chat1">chat1</option>
         <option value="chat2">chat2</option>
@@ -16,7 +16,7 @@ function Select() {
         <option value="chat4">chat4</option>
       </select>
       <p>{value} selected </p>
-    </>
+    </div>
   );
 }
 

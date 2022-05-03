@@ -5,7 +5,7 @@ body {
 
 .wrapper-chat {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   height: 600px;
   width: 400px;
 }
@@ -75,8 +75,8 @@ body {
   border-radius: 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   height: 25px;
 }
 
@@ -90,14 +90,20 @@ body {
 
 #element::-webkit-scrollbar-track {
   -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
-          box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
   background-color: #cfcfcf;
   border-radius: 10px;
 }
 
 #element::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9c9c9c), to(#464646));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#9c9c9c),
+    to(#464646)
+  );
   background: linear-gradient(180deg, #9c9c9c, #464646);
 }
 /*# sourceMappingURL=styles.css.map */

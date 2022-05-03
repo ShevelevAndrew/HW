@@ -2,7 +2,7 @@ import React from "react";
 
 export const Message = ({ message }) => {
   return (
-    <>
+    <div>
       <div className="companion">{message}</div>
       <div className="message">
         {message}
@@ -20,6 +20,6 @@ export const Message = ({ message }) => {
         {message}
         {message}
       </div>
-    </>
+    </div>
   );
 };
