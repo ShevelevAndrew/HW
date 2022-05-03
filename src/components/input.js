@@ -11,6 +11,7 @@ function Input({ onAddMessage }) {
     e.preventDefault();
     setValue("");
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit} noValidate autoComplete="off">
