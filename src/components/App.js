@@ -10,11 +10,7 @@ export default function App() {
         <Select />
       </div>
       <div className="chat" id="element">
-        <Message
-          message="Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta
-        obcaecati deserunt nobis suscipit eaque? "
-        />
+        <Message message="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque? " />
       </div>
       <div className="inputbox">
         <Input />
