@@ -1,0 +1,128 @@
+// .body-message {
+//     flex-direction: row;
+//     // border: 1px solid rgb(255, 12, 4);
+//     width: 450px;
+//     height: 100vh;
+//     overflow-y: auto;
+//     scroll-snap-type: y mandatory;
+//     -webkit-overflow-scrolling: touch;
+// }
+// .messageField {
+//      border: 1px solid orange;
+//     width: 400px;
+//     height: 80vh;
+//     // display: 'flex';
+//     padding: 20px;
+//     padding-left: 20px;
+//     padding-bottom: 50px;
+//     & .message {
+//         display: block;
+//         background-color: rgb(219, 243, 253);
+//         max-width: 250px;
+//         border-radius: 10px;
+//         padding: 4px;
+//         float:right;
+//         margin: 1px;
+//     }
+//     & .companion {
+//         display: block;
+//         background-color: rgb(231, 226, 226);
+//         max-width: 250px;
+//         border-radius: 10px;
+//         padding: 4px;
+//         margin: 1px;
+//     }
+// }
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+.wrapper-chat {
+  //   border: 1px solid red;
+  box-sizing: border-box;
+  height: 600px;
+  width: 400px;
+}
+.wrapper-chat .header {
+  border: 1px solid #cfcfcf;
+  text-align: center;
+  background: #cfcfcf;
+}
+.wrapper-chat .combobox {
+  color: black;
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+  background: #cfcfcf;
+}
+.wrapper-chat .chat {
+  //   border: 1px solid #dbdbdb;
+  background: #cfcfcf;
+  overflow-y: scroll;
+  height: 85%;
+  min-height: 100px;
+  //   margin: 2px;
+}
+.wrapper-chat .chat .message {
+  display: block;
+  background-color: rgb(219, 243, 253);
+  max-width: 250px;
+  border-radius: 10px;
+  padding: 4px;
+  float: right;
+  margin: 2px;
+}
+.wrapper-chat .chat .companion {
+  display: block;
+  background-color: rgb(231, 226, 226);
+  max-width: 250px;
+  border-radius: 10px;
+  padding: 4px;
+  float: left;
+  margin: 1px;
+}
+.wrapper-chat .inputbox {
+  //   border: 1px solid #000;
+  height: 40px;
+  min-height: 40px;
+}
+.inputbox {
+  height: 34px;
+  background-color: #cfcfcf;
+  // clear: both;
+  margin-top: 0px;
+  & input {
+    margin: 7px;
+    height: 20px;
+    width: 310px;
+    font-size: 15px;
+  }
+  & button {
+    text-decoration: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    height: 25px;
+  }
+  & button:hover {
+    background: rgb(199, 199, 199);
+  }
+}
+
+#element::-webkit-scrollbar {
+  width: 10px;
+}
+
+#element::-webkit-scrollbar-track {
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #cfcfcf;
+  border-radius: 10px;
+}
+
+#element::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(180deg, #9c9c9c, #464646);
+}

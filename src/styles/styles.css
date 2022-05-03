@@ -1,0 +1,103 @@
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+.wrapper-chat {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 600px;
+  width: 400px;
+}
+
+.wrapper-chat .header {
+  border: 1px solid #cfcfcf;
+  text-align: center;
+  background: #cfcfcf;
+}
+
+.wrapper-chat .combobox {
+  color: black;
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+  background: #cfcfcf;
+}
+
+.wrapper-chat .chat {
+  background: #cfcfcf;
+  overflow-y: scroll;
+  height: 85%;
+  min-height: 100px;
+}
+
+.wrapper-chat .chat .message {
+  display: block;
+  background-color: #dbf3fd;
+  max-width: 250px;
+  border-radius: 10px;
+  padding: 4px;
+  float: right;
+  margin: 2px;
+}
+
+.wrapper-chat .chat .companion {
+  display: block;
+  background-color: #e7e2e2;
+  max-width: 250px;
+  border-radius: 10px;
+  padding: 4px;
+  float: left;
+  margin: 1px;
+}
+
+.wrapper-chat .inputbox {
+  height: 40px;
+  min-height: 40px;
+}
+
+.inputbox {
+  height: 34px;
+  background-color: #cfcfcf;
+  margin-top: 0px;
+}
+
+.inputbox input {
+  margin: 7px;
+  height: 20px;
+  width: 310px;
+  font-size: 15px;
+}
+
+.inputbox button {
+  text-decoration: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  height: 25px;
+}
+
+.inputbox button:hover {
+  background: #c7c7c7;
+}
+
+#element::-webkit-scrollbar {
+  width: 10px;
+}
+
+#element::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+          box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #cfcfcf;
+  border-radius: 10px;
+}
+
+#element::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9c9c9c), to(#464646));
+  background: linear-gradient(180deg, #9c9c9c, #464646);
+}
+/*# sourceMappingURL=styles.css.map */
