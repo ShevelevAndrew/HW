@@ -9,6 +9,7 @@ function Input({ onAddMessage }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    onAddMessage(value);
     setValue("");
   };
 

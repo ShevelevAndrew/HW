@@ -5,7 +5,7 @@ body {
 
 .wrapper-chat {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   height: 600px;
   width: 400px;
 }
@@ -35,7 +35,8 @@ body {
 .wrapper-chat .chat .message {
   display: block;
   background-color: #dbf3fd;
-  max-width: 250px;
+  text-align: right;
+  width: 350px;
   border-radius: 10px;
   padding: 4px;
   float: right;
@@ -45,7 +46,7 @@ body {
 .wrapper-chat .chat .companion {
   display: block;
   background-color: #e7e2e2;
-  max-width: 250px;
+  width: 350px;
   border-radius: 10px;
   padding: 4px;
   float: left;
@@ -90,20 +91,14 @@ body {
 
 #element::-webkit-scrollbar-track {
   -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
-  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+          box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
   background-color: #cfcfcf;
   border-radius: 10px;
 }
 
 #element::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#9c9c9c),
-    to(#464646)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(#9c9c9c), to(#464646));
   background: linear-gradient(180deg, #9c9c9c, #464646);
 }
 /*# sourceMappingURL=styles.css.map */
