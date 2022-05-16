@@ -1,25 +1,14 @@
 import React from "react";
+import { AUTHORS } from "./utils/constants";
+import Input from "./input";
 
-export const Message = ({ message }) => {
+export const Message = ({ strMessage }) => {
+  const sendMessage = (newMessage) => {
+    strMessage({ autor: AUTHORS.USER, mess: newMessage });
+  };
   return (
     <div>
-      <div className="companion">{message}</div>
-      <div className="message">
-        {message}
-        {message}
-      </div>
-      <div className="message">
-        {message}
-        {message}
-      </div>
-      <div className="message">
-        {message}
-        {message}
-      </div>
-      <div className="message">
-        {message}
-        {message}
-      </div>
+      <Input onAddMessage={sendMessage} />
     </div>
   );
 };
