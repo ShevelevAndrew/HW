@@ -1,12 +1,12 @@
 import React from "react";
 import MessageField from "./MessageField";
-import Select from "./select";
+import ChatList from "./chatList";
 
 export default function App() {
   return (
     <div className="wrapper-chat">
       <div className="header">
-        <Select />
+        <ChatList />
       </div>
       <MessageField />
     </div>

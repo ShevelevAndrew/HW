@@ -10,15 +10,16 @@ body {
 .wrapper-chat .header {
   border: 1px solid #cfcfcf;
   text-align: center;
-  background: #cfcfcf;
+  background: #a9b5fa;
 }
 .wrapper-chat .combobox {
   color: black;
   width: 100%;
   height: 30px;
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
-  background: #cfcfcf;
+  font-weight: bold;
+  background: #a9b5fa;
 }
 .wrapper-chat .chat {
   background: #cfcfcf;
@@ -29,36 +30,62 @@ body {
 .wrapper-chat .chat .message {
   display: block;
   background-color: rgb(219, 243, 253);
-  text-align: right;
+  // text-align: right;
   width: 350px;
   border-radius: 10px;
-  padding: 4px;
+  padding: 2px 5px 2px 5px;
   float: right;
-  margin: 2px;
+  margin: 5px;
+  & h2 {
+    margin: 0px;
+    font-size: 8px;
+    padding-left: 3px;
+  }
+  & p {
+    font-size: 8px;
+    margin: 0px;
+    text-align: right;
+  }
 }
+
 .wrapper-chat .chat .companion {
   display: block;
   background-color: rgb(231, 226, 226);
   width: 350px;
   border-radius: 10px;
-  padding: 4px;
+  padding: 2px 5px 2px 5px;
   float: left;
-  margin: 1px;
+  margin: 5px;
+  & h2 {
+    margin: 0px;
+    font-size: 8px;
+    padding-left: 3px;
+  }
+  & p {
+    font-size: 8px;
+    margin: 0px;
+    text-align: right;
+  }
 }
 .wrapper-chat .inputbox {
-  height: 40px;
-  min-height: 40px;
+  height: 50px;
+  min-height: 65px;
+  background-color: #fff;
+  border: 1px solid #cfcfcf;
+}
+.css-1laqsz7-MuiInputAdornment-root {
+  cursor: pointer;
 }
 .inputbox {
   height: 34px;
-  background-color: #cfcfcf;
+  background-color: #fff;
   margin-top: 0px;
   & input {
     margin: 7px;
     height: 20px;
-    width: 310px;
     font-size: 15px;
   }
+
   & button {
     text-decoration: none;
     border-radius: 10px;

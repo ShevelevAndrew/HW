@@ -1,8 +1,8 @@
 import React from "react";
 import { AUTHORS } from "./utils/constants";
+import { format } from "date-fns";
 import { Message } from "./Message";
 
-// const initMess = [{ autor: AUTHORS.USER, mess: "Hi" }];
 const initMess = [];
 const answer = [
   { autor: AUTHORS.BOT, mess: "Hi!" },
@@ -12,18 +12,24 @@ const answer = [
 ];
 export default function MessageField() {
   const [messages, setMessage] = React.useState(initMess);
-
   const randomMess = () => {
     return answer[Math.floor(Math.random() * 4)];
   };
   const addMessage = React.useCallback((str) => {
-    setMessage((prevMess) => [...prevMess, str]);
+    setMessage((prevMess) => [
+      ...prevMess,
+      {
+        id: prevMess.length + 1,
+        date: format(new Date(), "yyyy-MM-dd HH:MM:SS"),
+        ...str,
+      },
+    ]);
   }, []);
 
   React.useEffect(() => {
     const lastMessage = messages[messages.length - 1];
-    let timeout;
-    if (lastMessage?.autor === AUTHORS.USER) {
+    let timeout = null;
+    if (messages.length && lastMessage?.autor === AUTHORS.USER) {
       timeout = setTimeout(() => {
         addMessage(randomMess());
       }, 1000);
@@ -34,9 +40,11 @@ export default function MessageField() {
   return (
     <>
       <div className="chat" id="element">
-        {messages?.map(({ autor, mess }) => (
-          <div className={autor === "user" ? "message" : "companion"}>
+        {messages?.map(({ id, autor, mess, date }) => (
+          <div className={autor === "user" ? "message" : "companion"} key={id}>
+            <h2>{autor}</h2>
             {mess}
+            <p>{date}</p>
           </div>
         ))}
       </div>

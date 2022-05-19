@@ -1,6 +1,6 @@
 import React from "react";
 import { AUTHORS } from "./utils/constants";
-import Input from "./input";
+import InputField from "./input";
 
 export const Message = ({ strMessage }) => {
   const sendMessage = (newMessage) => {
@@ -8,7 +8,7 @@ export const Message = ({ strMessage }) => {
   };
   return (
     <div>
-      <Input onAddMessage={sendMessage} />
+      <InputField onAddMessage={sendMessage} />
     </div>
   );
 };
