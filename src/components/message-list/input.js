@@ -4,9 +4,12 @@ import styled from "@emotion/styled";
 import { Send } from "@mui/icons-material";
 
 const InputStyles = styled(Input)({
-  color: "#000",
-  padding: "10px 1px",
+  color: "#fff",
+  padding: "5px 1px",
   fontSize: "20px",
+  svg: {
+    fill: "#275179",
+  },
 });
 
 export default function InputField({ onAddMessage }) {
@@ -30,7 +33,7 @@ export default function InputField({ onAddMessage }) {
   };
 
   return (
-    <div>
+    <>
       <InputStyles
         inputRef={ref}
         placeholder="enter message"
@@ -46,6 +49,6 @@ export default function InputField({ onAddMessage }) {
           </InputAdornment>
         }
       />
-    </div>
+    </>
   );
 }
