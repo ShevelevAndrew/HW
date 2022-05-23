@@ -1,64 +1,159 @@
 body {
   height: 100vh;
   margin: 0;
+  font-family: sans-serif;
+}
+.wrapper {
+  // border: 1px solid blue;
+  height: 600px;
+  width: 800px;
+  display: flex;
+}
+.chatlist {
+  border-right: 1px solid #1f2b3a;
+  background: #101b27;
+  height: 100%;
+  width: 30%;
 }
 .wrapper-chat {
-  box-sizing: border-box;
-  height: 600px;
-  width: 400px;
+  // border: 1px solid #d9ff04;
+  // box-sizing: border-box;
+  height: 100%;
+  width: 70%;
 }
-.wrapper-chat .header {
-  border: 1px solid #cfcfcf;
+
+.header {
   text-align: center;
-  background: #cfcfcf;
+  background: #1f2b3a;
+  height: 60px;
+  width: 800px;
 }
-.wrapper-chat .combobox {
+.menulist {
+  display: flex;
+  & li {
+    list-style-type: none;
+    padding: 1px 1px 1px 1px;
+    margin: 0px 15px 1px 1px;
+    & a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+.combobox {
   color: black;
   width: 100%;
   height: 30px;
-  font-size: 15px;
+  font-size: 20px;
   text-align: center;
-  background: #cfcfcf;
+  font-weight: bold;
 }
-.wrapper-chat .chat {
-  background: #cfcfcf;
+.chat {
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  background: #101b27;
   overflow-y: scroll;
-  height: 85%;
-  min-height: 100px;
+  height: 541px;
 }
-.wrapper-chat .chat .message {
-  display: block;
-  background-color: rgb(219, 243, 253);
-  text-align: right;
-  width: 350px;
-  border-radius: 10px;
-  padding: 4px;
-  float: right;
-  margin: 2px;
+.blocktext {
+  display: flex;
+  height: 100%;
+  background: #101b27;
+  & p {
+    color: #fff;
+    font-size: 15px;
+    background-color: #275179;
+    padding: 3px 12px 3px 12px;
+    border-radius: 15px;
+    margin: auto;
+  }
 }
-.wrapper-chat .chat .companion {
-  display: block;
-  background-color: rgb(231, 226, 226);
-  width: 350px;
-  border-radius: 10px;
-  padding: 4px;
-  float: left;
-  margin: 1px;
+.message {
+  margin-right: 5px;
+  max-width: 450px;
+  min-width: 120px;
+  margin-bottom: 5px;
+  padding: 10px;
+  margin-left: auto;
+  background-color: #275179;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding: 2px 5px 2px 5px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  position: relative;
+  & h2 {
+    margin: 0px;
+    color: #b4b4b4;
+    font-size: 8px;
+    padding-left: 3px;
+  }
+  & p {
+    font-size: 8px;
+    color: #b4b4b4;
+    margin: 0px;
+    text-align: right;
+  }
 }
-.wrapper-chat .inputbox {
-  height: 40px;
-  min-height: 40px;
+.message::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  bottom: 0px;
+  border: 10px solid transparent;
+  border-bottom: 7px solid #275179;
+}
+
+.companion {
+  margin-left: 15px;
+  min-width: 120px;
+  max-width: 450px;
+  margin-right: auto;
+  background-color: #182e44;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 2px 5px 2px 5px;
+  margin-bottom: 5px;
+  position: relative;
+  & h2 {
+    margin: 0px;
+    font-size: 8px;
+    color: #b4b4b4;
+    padding-left: 3px;
+  }
+  & p {
+    font-size: 8px;
+    color: #b4b4b4;
+    margin: 0px;
+    text-align: right;
+  }
+}
+.companion::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  bottom: 0px;
+  border: 10px solid transparent;
+  border-bottom: 7px solid #182e44;
+}
+
+.css-1laqsz7-MuiInputAdornment-root {
+  cursor: pointer;
 }
 .inputbox {
-  height: 34px;
-  background-color: #cfcfcf;
+  background: #1f2b3a;
   margin-top: 0px;
   & input {
     margin: 7px;
     height: 20px;
-    width: 310px;
     font-size: 15px;
   }
+
   & button {
     text-decoration: none;
     border-radius: 10px;
@@ -77,12 +172,12 @@ body {
 }
 
 #element::-webkit-scrollbar-track {
-  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
-  background-color: #cfcfcf;
-  border-radius: 10px;
+  box-shadow: 5px 5px 5px -5px rgba(48, 86, 114, 0.5) inset;
+  background-color: #101b27;
+  border-radius: 8px;
 }
 
 #element::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: linear-gradient(180deg, #9c9c9c, #464646);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #275179, #275179);
 }
