@@ -6,6 +6,7 @@ import { Send } from "@mui/icons-material";
 function InputField({ onAddMessage }) {
   const [value, setValue] = React.useState("");
   const ref = React.useRef();
+
   const handleChange = (e) => {
     setValue(e.target.value);
   };
