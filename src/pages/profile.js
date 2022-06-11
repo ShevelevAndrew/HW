@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { ProfileForm } from "../components";
 import { toggleVisibleProfile, updateProfile } from "../store/profile";
 
 export const ProfilePge = () => {
@@ -42,11 +43,16 @@ export const ProfilePge = () => {
         </label>
         <button type="submit">send</button>
       </form>
-      {/* <button onClick={() => dispatch(toggleVisibleProfile())}>toggle</button> */}
+      <button onClick={() => dispatch(toggleVisibleProfile())}>toggle</button>
       {profile.isVisibleProfile && (
         <>
           <h2>{profile.firstName}</h2>
           <h2>{profile.lastName}</h2>
+          <ProfileForm
+            firstName={profile.firstName}
+            lastName={profile.lastName}
+            visible={profile.isVisible}
+          />
         </>
       )}
     </div>
