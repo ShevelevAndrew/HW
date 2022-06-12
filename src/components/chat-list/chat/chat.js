@@ -2,6 +2,7 @@ import { ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
 import styled from "@emotion/styled";
 import styles from "./chat.module.css";
+import { useSelector } from "react-redux";
 
 const ListItemStyles = styled(ListItem)`
   background: #182e44;
@@ -14,15 +15,27 @@ const ListItemStyles = styled(ListItem)`
   }
 `;
 
-export function Chat({ title, selected }) {
+export function Chat({ chatid, title, selected, deleteConversationByName }) {
+  const message = useSelector((state) => {
+    console.log("state.messages", state.messages.messages);
+    const messages = state.messages.messages[chatid] ?? [];
+    return messages[messages.length - 1];
+  });
+
   return (
     <ListItemStyles className={styles.item} button={true} selected={selected}>
       <ListItemIcon>
+        <button onClick={(e) => deleteConversationByName(chatid, e)}>X</button>
         <AccountCircle fontSize="large" className={styles.icon} />
       </ListItemIcon>
       <div className={styles.description}>
         <ListItemText className={styles.text} primary={title} />
-        <ListItemText className={styles.text} primary="author: last message" />
+        {message && (
+          <ListItemText
+            className={styles.text}
+            primary={`${message.autor}:${message.mess}`}
+          />
+        )}
       </div>
     </ListItemStyles>
   );
