@@ -8,4 +8,7 @@ export const createConversation = (conversation) => ({
 export const deleteConversation = (id) => ({
   type: DELETE_CONVERSATION,
   payload: id,
+  meta: {
+    delay: 5000,
+  },
 });
