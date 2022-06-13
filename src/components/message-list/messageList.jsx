@@ -19,7 +19,7 @@ export function MessageList() {
   const messages = useSelector(
     (state) => state.messages.messages[chatId] ?? []
   );
-  // console.log(messages);
+
   // const [messages, setMessages] = React.useState(initMess);
   const ref = useRef();
   const randomMess = () => {
@@ -68,7 +68,6 @@ export function MessageList() {
   }, [messages]);
   return (
     <>
-      {/* {console.log(messages)} */}
       <div ref={ref} className="chat" id="element">
         {messages?.map(({ id, autor, mess, date }) => (
           <div className={autor === "user" ? "message" : "companion"} key={id}>

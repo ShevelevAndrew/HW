@@ -17,7 +17,6 @@ const ListItemStyles = styled(ListItem)`
 
 export function Chat({ chatid, title, selected, deleteConversationByName }) {
   const message = useSelector((state) => {
-    console.log("state.messages", state.messages.messages);
     const messages = state.messages.messages[chatid] ?? [];
     return messages[messages.length - 1];
   });

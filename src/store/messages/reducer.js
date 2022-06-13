@@ -17,7 +17,6 @@ const initialState = {
 export const messageReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_MESSAGE:
-      console.log("mess", action.payload);
       const keys = Object.keys(action.payload);
 
       const currentMessage = !state.messages[keys]
@@ -36,7 +35,6 @@ export const messageReducer = (state = initialState, action) => {
               date: format(new Date(), "yyyy-MM-dd HH:MM:SS"),
             },
           ];
-      console.log("currentMessage", currentMessage);
 
       const newMess = {
         ...state.messages,
