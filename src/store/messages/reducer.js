@@ -24,7 +24,7 @@ export const messageReducer = (state = initialState, action) => {
             {
               ...action.payload[keys][0],
               id: 1,
-              date: format(new Date(), "yyyy-MM-dd HH:MM:SS"),
+              date: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
             },
           ]
         : [
@@ -32,7 +32,7 @@ export const messageReducer = (state = initialState, action) => {
             {
               ...action.payload[keys][0],
               id: state.messages[keys].length + 1,
-              date: format(new Date(), "yyyy-MM-dd HH:MM:SS"),
+              date: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
             },
           ];
 
