@@ -9,7 +9,6 @@ const str = {
   mess: randomMess(),
 };
 export const botMessage = (store) => (next) => (action) => {
-  // const chatId = Object.keys(action.payload);
   if (
     action.type === ADD_MESSAGE &&
     action.payload[Object.keys(action.payload)][0]?.autor === "user"

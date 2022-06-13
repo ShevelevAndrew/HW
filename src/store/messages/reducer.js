@@ -1,13 +1,6 @@
 import { ADD_MESSAGE } from "./types";
-// import { AUTHORS } from "../../components/utils/constants";
 import { format } from "date-fns";
 
-// const answer = [
-//   { autor: AUTHORS.BOT, mess: "Hi!" },
-//   { autor: AUTHORS.BOT, mess: "How are you?" },
-//   { autor: AUTHORS.BOT, mess: "Hi! where are you? How are you?" },
-//   { autor: AUTHORS.BOT, mess: "Wow!" },
-// ];
 const initialState = {
   messages: {
     ch_id1: [],
