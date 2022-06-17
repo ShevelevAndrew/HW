@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 import { profileReducer } from "./profile";
 import { conversationReducer } from "./conversations";
 import { messageReducer } from "./messages";
+import { gistsReducer } from "./gists";
 import {
   logger,
   timeScheduler,
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   profile: profileReducer,
   conversation: conversationReducer,
   messages: messageReducer,
+  gists: gistsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
