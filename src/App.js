@@ -1,7 +1,7 @@
 import React from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ProfilePge, ChatPage, HomePage } from "./pages";
+import { ProfilePge, ChatPage, HomePage, GistsPage } from "./pages";
 import { Header } from "./components";
 export default function App() {
   return (
@@ -12,6 +12,7 @@ export default function App() {
           <Route path="/profile" element={<ProfilePge />} />
           <Route path="/chat/*" element={<ChatPage />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="/gists" element={<GistsPage />} />
           <Route path="*" element={<h1>Page not found 404</h1>} />
         </Routes>
       </BrowserRouter>

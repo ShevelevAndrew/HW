@@ -1,4 +1,3 @@
-import { act } from "react-dom/test-utils";
 import { TOGGLE_VISIBLE_PROFILE, UPDATE_PROFILE } from "./types";
 
 const initialState = {
