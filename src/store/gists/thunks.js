@@ -1,5 +1,12 @@
 // import { getPublicGistsApi } from "../../api/gists";
-import { getGistsStart, getGistsSuccess, getGistsError } from "./actions";
+import {
+  getGistsStart,
+  getGistsSuccess,
+  getGistsError,
+  getGistsByNameStart,
+  getGistsByNameSuccess,
+  getGistsByNameError,
+} from "./actions";
 
 // const URL = (page) => `https://api.github.com/gists/public?page=${page}`;
 
@@ -11,8 +18,7 @@ export const getGists =
 
       // const result = await fetch(URL(page));
       // const data = await result.json();
-      // const { data } = await api.getPublicGistsApi(page);
-      const { data } = await api.getGistsByNameApi();
+      const { data } = await api.getPublicGistsApi(page);
 
       // if (result.status === 200) {
       dispatch(getGistsSuccess(data));
@@ -21,5 +27,17 @@ export const getGists =
       // }
     } catch (error) {
       dispatch(getGistsError(error));
+    }
+  };
+export const getGistsByName =
+  (name = "bogdanq") =>
+  async (dispatch, getState, api) => {
+    try {
+      dispatch(getGistsByNameStart());
+
+      const { data } = await api.getGistsByNameApi(name);
+      dispatch(getGistsByNameSuccess(data));
+    } catch (error) {
+      dispatch(getGistsByNameError(error));
     }
   };
