@@ -1,6 +1,8 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
+import thunk from "redux-thunk";
 import storage from "redux-persist/lib/storage";
+import { getPublicGistsApi, getGistsByNameApi } from "../api/gists";
 import { profileReducer } from "./profile";
 import { conversationReducer } from "./conversations";
 import { messageReducer } from "./messages";
@@ -10,8 +12,9 @@ import {
   timeScheduler,
   botMessage,
   crashReporter,
-  thunk,
 } from "./middlewares";
+
+const api = { getPublicGistsApi, getGistsByNameApi };
 
 const persistConfig = {
   key: "root",
@@ -32,7 +35,13 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 export const store = createStore(
   persistedReducer,
   compose(
-    applyMiddleware(thunk, logger, timeScheduler, botMessage, crashReporter),
+    applyMiddleware(
+      thunk.withExtraArgument(api),
+      logger,
+      timeScheduler,
+      botMessage,
+      crashReporter
+    ),
     window.__REDUX_DEVTOOLS_EXTENSION__
       ? window.__REDUX_DEVTOOLS_EXTENSION__()
       : (args) => args
