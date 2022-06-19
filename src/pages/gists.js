@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import debounce from "lodash.debounce";
 import { getGists, getGistsByName } from "../store/gists";
 import { Input, InputAdornment } from "@mui/material";
 import styled from "@emotion/styled";
@@ -13,6 +14,10 @@ const InputStyles = styled(Input)({
     fill: "#275179",
   },
 });
+
+const serchGistsDebounce = debounce((query, dispatch) => {
+  dispatch(getGistsByName(query));
+}, 1000);
 
 export const GistsPage = () => {
   const [value, setValue] = useState("bogdanq");
@@ -48,11 +53,16 @@ export const GistsPage = () => {
 
   useEffect(() => {
     dispatch(getGists());
-    dispatch(getGistsByName());
   }, [dispatch]);
 
+  useEffect(() => {
+    serchGistsDebounce(value, dispatch);
+  }, [value, dispatch]);
+
   const send = () => {
-    dispatch(getGistsByName(value));
+    if (!!value) {
+      dispatch(getGistsByName(value));
+    }
   };
   // if (error) {
   //   return (
@@ -100,6 +110,11 @@ export const GistsPage = () => {
 
         <div className="wraper-gists">
           <div>
+            <input
+              placeholder="search"
+              value={value}
+              onChange={(e) => e.target.value}
+            />
             <InputStyles
               placeholder="enter name gists"
               value={value}
