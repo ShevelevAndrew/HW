@@ -1,20 +1,43 @@
+import { signOut } from "firebase/auth";
+import { auth } from "../../api/firebase";
 import { NavLink } from "react-router-dom";
-const menu = [
-  { title: "Home", to: "/" },
+
+const menuWithsession = [
   { title: "Chat", to: "/chat" },
   { title: "Profile", to: "/profile" },
-  { title: "Gists Page", to: "/gists" },
+  { title: "Gists", to: "/gists" },
 ];
-export function Header() {
+
+const menuWithoutsession = [
+  { title: "Home", to: "/" },
+  { title: "Signup", to: "/sign-up" },
+  { title: "Login", to: "/login" },
+];
+export function Header({ session }) {
   return (
     <div className="header">
-      header
+      {!!session && (
+        <button
+          onClick={() => {
+            signOut(auth);
+          }}
+        >
+          out
+        </button>
+      )}
       <ul className="menulist">
-        {menu.map((item) => (
-          <li key={item.title}>
-            <NavLink to={item.to}>{item.title}</NavLink>
-          </li>
-        ))}
+        {!!session &&
+          menuWithsession.map((item) => (
+            <li key={item.title}>
+              <NavLink to={item.to}>{item.title}</NavLink>
+            </li>
+          ))}
+        {!session &&
+          menuWithoutsession.map((item) => (
+            <li key={item.title}>
+              <NavLink to={item.to}>{item.title}</NavLink>
+            </li>
+          ))}
       </ul>
     </div>
   );
