@@ -13,11 +13,18 @@ import {
 import { Header } from "./components";
 import { PrivateRoute, PublicRoute } from "./components";
 import { auth } from "./api/firebase";
+// import { getConversationsApi } from "./api/conversations";
 
 export default function App() {
   const [session, setSession] = useState(null);
 
   const isAuth = !!session;
+
+  // useEffect(() => {
+  //   // createConversationApi(1, "groop1");
+  //   // createConversationApi(2, "groop2");
+  //   getConversationsApi();
+  // }, []);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {

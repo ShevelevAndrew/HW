@@ -3,6 +3,11 @@ import { persistStore, persistReducer } from "redux-persist";
 import thunk from "redux-thunk";
 import storage from "redux-persist/lib/storage";
 import { getPublicGistsApi, getGistsByNameApi } from "../api/gists";
+import {
+  getConversationsApi,
+  createConversationApi,
+  removeConversationsApi,
+} from "../api/conversations";
 import { profileReducer } from "./profile";
 import { conversationReducer } from "./conversations";
 import { messageReducer } from "./messages";
@@ -14,7 +19,13 @@ import {
   crashReporter,
 } from "./middlewares";
 
-const api = { getPublicGistsApi, getGistsByNameApi };
+const api = {
+  getPublicGistsApi,
+  getGistsByNameApi,
+  getConversationsApi,
+  createConversationApi,
+  removeConversationsApi,
+};
 
 const persistConfig = {
   key: "root",
