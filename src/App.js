@@ -2,7 +2,14 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 
-import { ProfilePge, ChatPage, HomePage, GistsPage, SignUpPage } from "./pages";
+import {
+  ProfilePge,
+  ChatPage,
+  HomePage,
+  GistsPage,
+  SignUpPage,
+  LoginPage,
+} from "./pages";
 import { Header } from "./components";
 import { PrivateRoute, PublicRoute } from "./components";
 import { auth } from "./api/firebase";
@@ -57,6 +64,14 @@ export default function App() {
             element={
               <PublicRoute isAuth={isAuth}>
                 <SignUpPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <PublicRoute isAuth={isAuth}>
+                <LoginPage />
               </PublicRoute>
             }
           />

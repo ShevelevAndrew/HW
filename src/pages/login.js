@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../api/firebase";
 
 const onSubmit = (form) => {
-  return createUserWithEmailAndPassword(auth, form.email, form.password);
+  return signInWithEmailAndPassword(auth, form.email, form.password);
 };
 
-export const SignUpPage = () => {
+export const LoginPage = () => {
   const [form, setForm] = useState({ email: "", password: "" });
 
   const handleChangeForm = (e) => {
@@ -22,7 +22,7 @@ export const SignUpPage = () => {
 
   return (
     <div>
-      <h1>sign up</h1>
+      <h1>Login</h1>
       <input
         placeholder="email"
         value={form.email}
@@ -35,7 +35,7 @@ export const SignUpPage = () => {
         data-name="password"
         onChange={handleChangeForm}
       />
-      <button onClick={() => onSubmit(form)}>sign up</button>
+      <button onClick={() => onSubmit(form)}>Login</button>
     </div>
   );
 };
