@@ -27,7 +27,8 @@ export function MessageList() {
   // };
   const addMessage = React.useCallback(
     (str) => {
-      dispatch(sendMessageWithBot({ [chatId]: [str] }));
+      console.log();
+      dispatch(sendMessageWithBot({ [chatId]: [str] }, messages.length + 3));
 
       // console.log("MESS", { [chatId]: str });
       // dispatch(addMessageStore(mess));
@@ -43,7 +44,7 @@ export function MessageList() {
       //   ],
       // }));
     },
-    [chatId, dispatch]
+    [chatId, dispatch, messages]
   );
 
   // React.useEffect(() => {

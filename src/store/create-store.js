@@ -8,6 +8,7 @@ import {
   createConversationApi,
   removeConversationsApi,
 } from "../api/conversations";
+import { createMessageApi, getMessagesApi } from "../api/messages";
 import { profileReducer } from "./profile";
 import { conversationReducer } from "./conversations";
 import { messageReducer } from "./messages";
@@ -18,6 +19,19 @@ import {
   botMessage,
   crashReporter,
 } from "./middlewares";
+// import { format } from "date-fns";
+
+// setTimeout(() => {
+//   console.log("send 1");
+//   createMessageApi(
+//     {
+//       date: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
+//       message: " test mess 1",
+//       autor: "bot",
+//     },
+//     "ch_id1"
+//   );
+// });
 
 const api = {
   getPublicGistsApi,
@@ -25,6 +39,8 @@ const api = {
   getConversationsApi,
   createConversationApi,
   removeConversationsApi,
+  createMessageApi,
+  getMessagesApi,
 };
 
 const persistConfig = {
