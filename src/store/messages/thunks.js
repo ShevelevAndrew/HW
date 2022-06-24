@@ -47,7 +47,7 @@ export const getMessages = () => async (dispatch, _, api) => {
   }
 };
 
-export const sendMessageWithBot = (message, id) => async (dispatch, _, api) => {
+export const sendMessageWithBot = (message) => async (dispatch, _, api) => {
   // const key = Object.keys(message);
   // console.log("key", key);
   // console.log("message", message, id);
