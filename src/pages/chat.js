@@ -1,8 +1,15 @@
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { ChatList, MessageList, Layout } from "../components";
+import { getConversations } from "../store/conversations";
+import { getMessages } from "../store/messages";
+
 export const ChatPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const conversation = useSelector((state) => state.conversation.conversation);
+  const messages = useSelector((state) => state.messages.messages);
 
   useEffect(() => {
     const listner = ({ code }) => {
@@ -15,6 +22,18 @@ export const ChatPage = () => {
 
     return () => document.removeEventListener("keydown", listner);
   }, [navigate]);
+
+  useEffect(() => {
+    if (!conversation.length) {
+      dispatch(getConversations());
+    }
+  }, [dispatch, conversation]);
+
+  useEffect(() => {
+    if (!Object.keys(messages).length) {
+      dispatch(getMessages());
+    }
+  }, [dispatch, messages]);
 
   return (
     <Routes>

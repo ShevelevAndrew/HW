@@ -27,7 +27,7 @@ const ListStyles = styled(List)`
 `;
 
 export const ChatList = () => {
-  const conversation = useSelector((state) => state.conversation.conversation);
+  const { conversation, pending } = useSelector((state) => state.conversation);
   // const [chats] = useState(chatlist);
   const { chatId } = useParams();
   const navigate = useNavigate();
@@ -35,9 +35,8 @@ export const ChatList = () => {
 
   const createConversationByName = () => {
     const name = prompt("Input chat name ");
-
     if (!!name) {
-      dispatch(createConversation(name));
+      dispatch(createConversation(conversation.length + 1, name));
     } else {
       alert("Dot`t validate chat name");
     }
@@ -54,16 +53,18 @@ export const ChatList = () => {
   return (
     <ListStyles component="nav">
       <button onClick={createConversationByName}>create</button>
-      {conversation.map((chat) => (
-        <Link key={chat.id} to={`/chat/${chat.id}`}>
-          <Chat
-            chatid={chat.id}
-            title={chat.chatname}
-            selected={chatId === chat.id}
-            deleteConversationByName={deleteConversationByName}
-          />
-        </Link>
-      ))}
+      {pending
+        ? "pending..."
+        : conversation.map((chat) => (
+            <Link key={chat.id} to={`/chat/${chat.id}`}>
+              <Chat
+                chatid={chat.id}
+                title={chat.chatname}
+                selected={chatId === chat.id}
+                deleteConversationByName={deleteConversationByName}
+              />
+            </Link>
+          ))}
     </ListStyles>
   );
 };
