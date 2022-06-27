@@ -1,5 +1,5 @@
 import {
-  // ADD_MESSAGE,
+  ADD_MESSAGE,
   GET_MESSAGE_START,
   GET_MESSAGE_SUCCESS,
   GET_MESSAGE_ERROR,
@@ -19,34 +19,34 @@ const initialState = {
 
 export const messageReducer = (state = initialState, action) => {
   switch (action.type) {
-    // case ADD_MESSAGE:
-    // const keys = Object.keys(action.payload);
+    case ADD_MESSAGE:
+      const keys = Object.keys(action.payload);
 
-    // const currentMessage = !state.messages[keys]
-    //   ? [
-    //       {
-    //         ...action.payload[keys][0],
-    //         id: 1,
-    //         date: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
-    //       },
-    //     ]
-    //   : [
-    //       ...state.messages[keys],
-    //       {
-    //         ...action.payload[keys][0],
-    //         id: state.messages[keys].length + 1,
-    //         date: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
-    //       },
-    //     ];
+      const currentMessages = !state.messages[keys]
+        ? [
+            {
+              ...action.payload[keys][0],
+              id: 1,
+              date: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
+            },
+          ]
+        : [
+            ...state.messages[keys],
+            {
+              ...action.payload[keys][0],
+              id: state.messages[keys].length + 1,
+              date: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
+            },
+          ];
 
-    // const newMess = {
-    //   ...state.messages,
-    //   [keys]: currentMessage,
-    // };
-    // return {
-    //   ...state,
-    //   // messages: newMess,
-    // };
+      const newMes = {
+        ...state.messages,
+        [keys]: currentMessages,
+      };
+      return {
+        ...state,
+        messages: newMes,
+      };
 
     case GET_MESSAGE_START:
       return { ...state, pending: true, error: null };
@@ -62,6 +62,7 @@ export const messageReducer = (state = initialState, action) => {
 
     case CREATE_MESSAGE_SUCCESS:
       const key = Object.keys(action.payload);
+      console.log(action.payload);
       const currentMessage = !state.messages[key]
         ? [
             {
