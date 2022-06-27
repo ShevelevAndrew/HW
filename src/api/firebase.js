@@ -3,8 +3,6 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
-console.log("1111", process.env.REACT_APP_API_KEY);
-
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
