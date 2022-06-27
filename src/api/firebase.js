@@ -3,16 +3,17 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
+console.log("1111", process.env.REACT_APP_API_KEY);
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCuCKM_UENk9hN1SQG22PvMTzc3wRx-WB8",
-  authDomain: "gb-chat8-9f879.firebaseapp.com",
-  databaseURL:
-    "https://gb-chat8-9f879-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "gb-chat8-9f879",
-  storageBucket: "gb-chat8-9f879.appspot.com",
-  messagingSenderId: "88122836510",
-  appId: "1:88122836510:web:4523ff90dd1aa6237ad00f",
-  measurementId: "G-2ZMV7T0DRL",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
